@@ -1,0 +1,56 @@
+/* Hero Section Styling */
+#hero {
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Black text */
+    overflow: hidden;
+  }
+  
+  #hero .container {
+    position: relative;
+    z-index: 10;
+  }
+  
+  #hero h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin: 0 0 2rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  #hero p {
+    font-size: 1.25rem;
+    margin: 0 0 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  #hero button {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  #hero button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
