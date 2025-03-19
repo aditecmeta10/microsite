@@ -1,14 +1,18 @@
 import { useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import React from 'react';
+import haha1 from '../images/masterplan1.png';
+import haha2 from '../images/masterplan2.png';
+import haha3 from '../images/masterplan3.png';
+import haha4 from '../images/masterplan4.png';
 
 const MasterPlan = ({ id }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const masterPlanImages = [
-    "/public/images/masterplan1.png",
-    "/public/images/masterplan2.png",
-    "/public/images/masterplan3.png", 
-    "/public/images/masterplan4.png" 
+    haha1,
+    haha2,
+    haha3, 
+    haha4 
   ];
 
   const nextSlide = () => {

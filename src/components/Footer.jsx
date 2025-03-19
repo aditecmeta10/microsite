@@ -1,6 +1,6 @@
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 import React from 'react';
-import img3 from '../../public/images/gold.png';
+import img3 from '../images/gold.png';
 
 const Footer = () => {
   return (

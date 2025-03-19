@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import React from 'react';
-
+import lol1 from '../images/floorplan1.png';
+import lol2 from '../images/floorplan2.png';
+import lol3 from '../images/floorplan3.png';
 
 
 
@@ -11,21 +13,21 @@ const FloorPlan = ({ id }) => {
   const floorPlans = [
     {
       title: "2 BHK",
-      image: "/public/images/floorplan1.png",
+      image: lol1,
       price: "₹1.26 CRORES",
       size: "TYPICAL UNIT PLAN",
       details: "EMI PRIVILEGE: ₹2.5 LAKHS | PRIORITY +1 LAKHS"
     },
     {
       title: "3 BHK",
-      image: "/public/images/floorplan2.png",
+      image: lol2,
       price: "₹1.85 CRORES",
       size: "TYPICAL UNIT PLAN",
       details: "EMI PRIVILEGE: ₹3.2 LAKHS | PRIORITY +1.5 LAKHS"
     },
     {
       title: "4 BHK",
-      image: "/public/images/floorplan3.png",
+      image: lol3,
       price: "₹2.45 CRORES",
       size: "TYPICAL UNIT PLAN",
       details: "EMI PRIVILEGE: ₹4.1 LAKHS | PRIORITY +2 LAKHS"

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import React from 'react';
-
+import ha from '../images/hero.png';
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -54,7 +54,7 @@ const ContactForm = () => {
         <div className="flex flex-col lg:flex-row">
           <div className="lg:w-1/2 mb-10 lg:mb-0">
             <img 
-              src="../../public/images/hero.png" 
+              src={ha}
               alt="Building at night" 
               className="w-full h-full object-cover rounded-lg"
             />

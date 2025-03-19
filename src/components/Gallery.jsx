@@ -2,10 +2,10 @@ import React from 'react';
 import '../assets/styles/gallery.css'; // Import the updated styles
 
 // Import images
-import img3 from '../../public/images/landscape3.jpg';
-import img4 from '../../public/images/landscape4.jpg';
-import img5 from '../../public/images/landscape5.jpg';
-import img6 from '../../public/images/landscape6.jpg';
+import img3 from '../images/landscape3.jpg';
+import img4 from '../images/landscape4.jpg';
+import img5 from '../images/landscape5.jpg';
+import img6 from '../images/landscape6.jpg';
 
 const Gallery = ({ id }) => {
   const galleryItems = [
