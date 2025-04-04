@@ -62,7 +62,7 @@ const ContactForm = () => {
 
           <div className="lg:w-1/2 lg:pl-12">
             <h2 className="text-2xl font-semibold mb-6">
-              Into opulent living begins now
+              CONTACT US NOW
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-4">
