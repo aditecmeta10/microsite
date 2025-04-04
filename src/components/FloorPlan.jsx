@@ -5,7 +5,7 @@ import lol1 from '../images/floorplan1.png';
 import lol2 from '../images/floorplan2.png';
 import lol3 from '../images/floorplan3.png';
 
-
+  
 
 const FloorPlan = ({ id }) => {
   const [currentSlide, setCurrentSlide] = useState(0);

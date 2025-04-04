@@ -139,14 +139,17 @@ const ContactForm = () => {
             <div className="mt-12">
               <h3 className="text-lg font-medium mb-4">SITE OFFICE</h3>
               <p className="text-gray-300">
-                No. 123, XYZ Road, <br />
+                Balewadi Village Rd, nr.
+                Mamta Dining Hall, <br />
                 Balewadi, Pune 411045, <br />
-                Maharashtra, India
+                Maharashtra, India 
+                Sr. No.: 45, 13,
+
               </p>
 
               <div className="mt-4">
                 <p className="text-gray-300">
-                  <span className="font-medium">RERA Reg No:</span> PXXXXXXXXXX
+                  <span className="font-medium">MAHA RERA No:</span> P52100045688
                 </p>
               </div>
             </div>

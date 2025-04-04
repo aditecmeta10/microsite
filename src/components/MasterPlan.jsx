@@ -68,7 +68,10 @@ const MasterPlan = ({ id }) => {
         </div>
         
         <div className="mt-12 max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
-          <h3 className="text-xl font-semibold mb-4">Project Highlights</h3>
+          
+          <h2 class="text-3xl font-semibold text-black text-center mb-12">
+  Project Highlights
+</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <ul className="list-disc list-inside space-y-2 text-gray-700">

@@ -16,7 +16,7 @@ const Footer = () => {
               Bund Garden Road, Camp Pune 411001, Maharashtra, India.
             </p>
             <a 
-              href="https://maps.google.com" 
+              href="https://www.google.com/maps/place/Mantra+Properties/@18.527324,73.877808,16z/data=!4m6!3m5!1s0x3bc2c0575d606eb1:0x2f3c752993283feb!8m2!3d18.5273235!4d73.8778075!16s%2Fg%2F11b8z7wvzd?hl=en&entry=ttu&g_ep=EgoyMDI1MDMxNi4wIKXMDSoASAFQAw%3D%3D" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-accent hover:underline text-sm"
@@ -45,10 +45,10 @@ const Footer = () => {
           
           <div>
             <h3 className="text-white text-sm mb-4">Contact Us</h3>
-            <p className="text-gray-300 mb-2">
-              +91 1234 56789
-            </p>
-            <p className="text-gray-300 mb-4">
+            <a href="tel:+917249065305"><p className="text-gray-300 mb-2">
+              +91 7249065305
+            </p></a>
+            {/* <p className="text-gray-300 mb-4">
               sales@example.com
             </p>
             <p className="text-gray-300 mb-2">
@@ -57,9 +57,9 @@ const Footer = () => {
             <p className="text-gray-300">
               Mr. AJIT SINGH
             </p>
-            <p className="text-gray-300">
-              +971 58 123 4599
-            </p>
+            <a href="tel:+917249065305"><p className="text-gray-300 mb-2">
+              +91 7249065305
+            </p></a> */}
           </div>
         </div>
         
@@ -79,19 +79,19 @@ const Footer = () => {
           <div className="text-center mb-6 md:mb-0">
             <h3 className="text-white mb-4">Follow Us:</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-accent transition-colors">
+              <a href="https://www.facebook.com/mantragrouppune" className="text-gray-300 hover:text-accent transition-colors">
                 <FaFacebookF size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-accent transition-colors">
+              <a href="https://www.instagram.com/mantraproperties/" className="text-gray-300 hover:text-accent transition-colors">
                 <FaInstagram size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-accent transition-colors">
+              <a href="https://x.com/mantra_Prop" className="text-gray-300 hover:text-accent transition-colors">
                 <FaTwitter size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-accent transition-colors">
+              <a href="http://youtube.com/channel/UCngsenlQBZDSFK0iGSYuYnA" className="text-gray-300 hover:text-accent transition-colors">
                 <FaYoutube size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-accent transition-colors">
+              <a href="https://www.linkedin.com/company/mantrapropertiesanddevelopers/" className="text-gray-300 hover:text-accent transition-colors">
                 <FaLinkedinIn size={20} />
               </a>
             </div>

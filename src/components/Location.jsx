@@ -1,35 +1,52 @@
 import React, { useRef, useEffect } from 'react';
 import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';  // Make sure Leaflet CSS is imported
+import 'leaflet/dist/leaflet.css'; // Import Leaflet CSS
 
 const Location = ({ id }) => {
   const mapRef = useRef(null); // For DOM element reference
   const mapInstance = useRef(null); // To store the Leaflet map instance
 
   useEffect(() => {
-    // Only initialize the map if it's not already initialized
-    if (mapRef.current && !mapInstance.current) {
-      // Initialize the map
-      mapInstance.current = L.map(mapRef.current).setView([18.5678, 73.7741], 15);
+    // Coordinates for Mantra Properties
+    const coordinates = [18.527324, 73.877808];
 
-      // Add dark theme tile layer
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        maxZoom: 19,
+    // Initialize the map only if it isn't already initialized
+    if (mapRef.current && !mapInstance.current) {
+      // Initialize the Leaflet map
+      mapInstance.current = L.map(mapRef.current).setView(coordinates, 15);
+
+      // Add Google Maps tiles
+      L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+        attribution: '&copy; <a href="https://www.google.com/maps">Google Maps</a>',
+        maxZoom: 20,
       }).addTo(mapInstance.current);
 
-      // Add marker to the map
-      L.marker([18.5678, 73.7741]).addTo(mapInstance.current);
+      // Function to open Google Maps in a new tab
+      const openGoogleMaps = () => {
+        const googleMapsUrl = `https://www.google.com/maps?q=${coordinates[0]},${coordinates[1]}`;
+        window.open(googleMapsUrl, '_blank');
+      };
+
+      // Add a marker for the specific location with a click event
+      L.marker(coordinates)
+        .addTo(mapInstance.current)
+        .bindPopup('Mantra Properties')
+        .openPopup()
+        .on('click', openGoogleMaps);
+
+      // Add a click event listener to the map itself
+      mapInstance.current.on('click', openGoogleMaps);
     }
 
-    // Cleanup on unmount (remove map instance)
+    // Cleanup the map on component unmount
     return () => {
       if (mapInstance.current) {
         mapInstance.current.remove();
         mapInstance.current = null;
       }
     };
-  }, []); // Empty array ensures this effect runs only once, when the component mounts
+  }, []); // Empty dependency array ensures this runs only once on mount
 
   return (
     <section id={id} className="py-16 bg-black text-white">
@@ -42,14 +59,18 @@ const Location = ({ id }) => {
           <div className="flex flex-col md:flex-row">
             {/* Leaflet Map (Left Side) */}
             <div className="w-full md:w-1/2">
-  {/* Map container */}
-  <div ref={mapRef} style={{ height: '400px', width: '100%', zIndex: 0}}></div>
-</div>
-
+              {/* Map container */}
+              <div
+                ref={mapRef}
+                style={{ height: '400px', width: '100%', zIndex: 0 }}
+              ></div>
+            </div>
 
             {/* Content (Right Side) */}
             <div className="w-full md:w-1/2 p-6">
-              <h3 className="text-2xl font-semibold mb-4">Strategic Location Advantages</h3>
+              <h3 className="text-2xl font-semibold mb-4">
+                Strategic Location Advantages
+              </h3>
               <div className="space-y-6">
                 <div>
                   <h4 className="text-lg font-medium mb-2">Nearby Essentials</h4>

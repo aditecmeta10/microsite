@@ -18,6 +18,11 @@ const Gallery = ({ id }) => {
   return (
     <section id={id} className="gallery-section">
       <div className="container">
+       
+      <h2 className="text-3xl font-semibold text-center mb-12">
+      Gallery
+        </h2>
+       <h2 className="gallery-title"></h2>
         <div className="gallery-grid">
           {galleryItems.map((item, index) => (
             <div key={index} className="gallery-item">
