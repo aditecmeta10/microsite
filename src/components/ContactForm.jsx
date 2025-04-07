@@ -1,26 +1,35 @@
 import { useState } from 'react';
 import React from 'react';
 import ha from '../images/hero.png';
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
+    consent: false, // Add consent to the initial state
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: type === 'checkbox' ? checked : value,
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Check if consent is checked
+    if (!formData.consent) {
+      setSubmitStatus('consent-error'); // Set a specific status for consent error
+      return; // Prevent form submission
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -37,7 +46,7 @@ const ContactForm = () => {
 
       if (response.ok) {
         setSubmitStatus('success');
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', message: '', consent: false });
       } else {
         setSubmitStatus('error');
       }
@@ -113,6 +122,21 @@ const ContactForm = () => {
                 />
               </div>
 
+              <div className="checkbox-container" >
+                <input
+style={{ marginRight: '6px' }}                  type="checkbox"
+                  id="consent"
+                  name="consent"
+                  checked={formData.consent}
+                  onChange={handleChange}
+                  required
+                  
+                />
+                <label htmlFor="consent">
+                  I authorize company representatives to Call, SMS, Email or WhatsApp me about its products and offers. This consent overrides any registration for DNC/NDNC.
+                </label>
+              </div>
+
               <div>
                 <button
                   type="submit"
@@ -134,6 +158,12 @@ const ContactForm = () => {
                   Something went wrong. Please try again.
                 </div>
               )}
+
+              {submitStatus === 'consent-error' && (
+                <div className="text-red-400 text-sm">
+                  You must agree to the terms by checking the consent box.
+                </div>
+              )}
             </form>
 
             <div className="mt-12">
@@ -144,7 +174,6 @@ const ContactForm = () => {
                 Balewadi, Pune 411045, <br />
                 Maharashtra, India 
                 Sr. No.: 45, 13,
-
               </p>
 
               <div className="mt-4">

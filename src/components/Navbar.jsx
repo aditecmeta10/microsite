@@ -35,6 +35,7 @@ const Navbar = () => {
 
   return (
     <div className="relative">
+      {/* Hero background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" 
         style={{ 
@@ -45,15 +46,22 @@ const Navbar = () => {
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       </div>
 
+      {/* Main Navbar - Smaller height with white background */}
       <nav
-        className={`fixed w-full z-50 bg-white shadow-xl transition-all duration-300 ease-in-out transform py-4`}
+        className="fixed w-full z-50 bg-white shadow-xl transition-all duration-300 ease-in-out py-0"
       >
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center">
-            <img src={img2} alt="Mantra" className="h-16" />
+        <div className="container mx-auto px-4 flex justify-between items-center h-14">
+          {/* Logo - Larger size but positioned slightly outside navbar boundaries */}
+          <div className="flex-shrink-0 z-10 relative">
+            <img 
+              src={img2} 
+              alt="Mantra" 
+              className="h-20 md:h-24 -my-3 transition-all duration-300"
+            />
           </div>
 
-          <div className="hidden md:flex space-x-8 items-center">
+          {/* Desktop Navigation with increased spacing */}
+          <div className="hidden md:flex space-x-9 items-center">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -62,27 +70,31 @@ const Navbar = () => {
                 smooth={true}
                 offset={-70}
                 duration={500}
-                className="text-gray-800 text-lg font-semibold hover:text-blue-600 cursor-pointer transition-colors whitespace-nowrap"
+                className="text-gray-800 text-sm font-medium hover:text-blue-600 cursor-pointer transition-colors whitespace-nowrap"
               >
                 {item.name}
               </Link>
             ))}
           </div>
 
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Contact Button for Desktop with 0.9em font size */}
+          <div className="hidden md:flex items-center">
             <button
               onClick={() => setShowPopup(true)}
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center shadow-md hover:shadow-xl transition-shadow"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1.5 rounded-lg flex items-center shadow-md hover:shadow-xl transition-all duration-300 font-medium"
+              style={{ fontSize: '0.9em' }}
             >
               <FaPhoneAlt className="mr-2" />
-              CONTACT 
+              CONTACT
             </button>
           </div>
 
-          <div className="md:hidden">
+          {/* Mobile Menu Toggle Button */}
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-gray-800 focus:outline-none"
+              aria-label="Toggle mobile menu"
             >
               {mobileMenuOpen ? (
                 <FaTimes className="h-6 w-6" />
@@ -93,12 +105,13 @@ const Navbar = () => {
           </div>
         </div>
 
+        {/* Mobile Menu Dropdown */}
         <div
-          className={`md:hidden fixed inset-x-0 top-0 bg-white py-4 shadow-md transition-transform duration-300 ease-in-out transform ${
+          className={`md:hidden fixed inset-x-0 top-0 pt-16 bg-white shadow-lg transition-transform duration-300 ease-in-out transform ${
             mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
-          }`}
+          } z-40`}
         >
-          <div className="container mx-auto px-4 flex flex-col space-y-3">
+          <div className="container mx-auto px-6 py-4 flex flex-col space-y-4">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -107,18 +120,20 @@ const Navbar = () => {
                 smooth={true}
                 offset={-70}
                 duration={500}
-                className="text-gray-800 text-lg font-semibold hover:text-blue-600 cursor-pointer transition-colors whitespace-nowrap"
+                className="text-gray-800 text-lg font-medium hover:text-blue-600 cursor-pointer transition-colors border-b border-gray-100 pb-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
+            {/* Mobile contact button with 0.9em font size */}
             <button
               onClick={() => {
                 setShowPopup(true);
                 setMobileMenuOpen(false);
               }}
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center justify-center shadow-md hover:shadow-xl transition-shadow"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg flex items-center justify-center shadow-md hover:shadow-xl transition-all duration-300 mt-2"
+              style={{ fontSize: '0.9em' }}
             >
               <FaPhoneAlt className="mr-2" />
               CONTACT
@@ -126,6 +141,8 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+
+      {/* Contact Popup */}
       <Popup 
         isOpen={showPopup} 
         onClose={() => setShowPopup(false)} 

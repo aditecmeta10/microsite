@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="text-white text-sm mb-4">Contact Us</h3>
-            <a href="tel:+917249065305"><p className="text-gray-300 mb-2">+91 7249065305</p></a>
+            <a href="tel:+919223003742"><p className="text-gray-300 mb-2">+919223003742</p></a>
           </div>
         </div>
         <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
@@ -47,12 +47,12 @@ const Footer = () => {
       </div>
 
       {/* Call Button */}
-      <a href="tel:+917249065305" className="fixed bottom-20 right-6 bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition-colors z-50">
+      <a href="tel:+919223003742" className="fixed bottom-20 right-6 bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition-colors z-50">
         <FaPhone size={24} style={{ transform: 'scaleX(-1)' }} />
       </a>
 
       {/* WhatsApp Button */}
-      <a href="https://wa.me/7499331820?text=I'm%20interested%20in%20Balewadi%20Riverside" target="_blank" rel="noopener noreferrer" className="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors z-50">
+      <a href="https://wa.me/+919223003742?text=I'm%20interested%20in%20Balewadi%20Riverside" target="_blank" rel="noopener noreferrer" className="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors z-50">
         <FaWhatsapp size={24} />
       </a>
     </footer>
