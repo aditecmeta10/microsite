@@ -30,19 +30,19 @@ const Hero = () => {
           </p> */}
           
           <div className="flex flex-wrap gap-4">
-            <button className="bg-white text-primary hover:bg-accent hover:text-white transition-colors px-6 py-3 rounded shadow-lg">
+            {/* <button className="bg-white text-primary hover:bg-accent hover:text-white transition-colors px-6 py-3 rounded shadow-lg">
               VIEW BROCHURE
             </button>
             <button className="bg-accent text-white hover:bg-white hover:text-primary transition-colors px-6 py-3 rounded shadow-lg">
               DOWNLOAD BROCHURE
-            </button>
+            </button> */}
             <Link
               to="contactform"
               spy={true}
               smooth={true}
               offset={-70}
               duration={500}
-              className="bg-primary text-white hover:bg-accent transition-colors px-6 py-3 rounded shadow-lg cursor-pointer"
+              className="bg-white text-primary transition-colors px-6 py-3 rounded shadow-lg cursor-pointer"
             >
               ENQUIRE NOW
             </Link>
